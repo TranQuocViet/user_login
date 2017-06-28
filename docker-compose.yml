@@ -1,0 +1,10 @@
+version: "2"
+services:
+  db:
+    image: kiasaki/alpine-postgres:9.5
+    ports: ['7432:5432']
+    env_file: .dev.database.env
+    environment:
+      PGDATA: /data/pgdata
+    volumes:
+      - ./docker/data:/data
